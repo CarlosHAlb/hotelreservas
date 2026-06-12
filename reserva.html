@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservas - Reservas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav id="menu-lateral">
+            <div class="logo-area">
+                <i class="fa-solid fa-hotel fa-2xl"></i>
+                <h2>Hotel Reservas</h2>
+            </div>
+            <ul>
+                <li><a href="inicio.html" style="color: inherit;"><i class="fa-solid fa-bed"></i> Quartos</a></li>
+                <li class="ativo"><i class="fa-solid fa-calendar-days"></i> Reservas</li>
+                <li onclick="alert('Hotel Reservas v1.0 - SENAI 2026')"><i class="fa-solid fa-circle-info"></i> Sobre</li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="tela-reservas">
+                <div class="topo-tabela">
+                    <div>
+                        <h2>Reservas do Quarto</h2>
+                        <p>Gerencie as hospedagens vinculadas</p>
+                    </div>
+                    <button class="btn-principal" onclick="cadastroReserva.classList.remove('oculto')">
+                        <i class="fa-solid fa-plus"></i> Nova Reserva
+                    </button>
+                </div>
+
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hóspede</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaReservasCorpo">
+                        </tbody>
+                </table>
+                <br>
+                <a href="inicio.html" class="btn-voltar-link"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            </section>
+        </main>
+    </div>
+
+    <div id="cadastroReserva" class="modal oculto">
+        <div class="janela">
+            <h2>Cadastro de Reserva</h2>
+            <p class="sub-modal">Preencha os dados da estadia</p>
+            <form id="formCadReserva">
+                <label>Nome do Hóspede</label>
+                <input type="text" id="hospede" placeholder="Nome completo" required>
+
+                <label>Data de Entrada</label>
+                <input type="datetime-local" id="data_entrada" required>
+
+                <label>Data de Saída</label>
+                <input type="datetime-local" id="data_saida" required>
+
+                <label>ID do Quarto</label>
+                <input type="number" id="quarto_id" placeholder="ID do quarto cadastrado" required>
+
+                <br><br>
+                <button type="submit" class="btn-modal-salvar">Cadastrar Reserva</button>
+                <button type="button" class="btn-modal-cancelar" onclick="cadastroReserva.classList.add('oculto')">Voltar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

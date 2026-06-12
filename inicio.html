@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservas - Quartos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav id="menu-lateral">
+            <div class="logo-area">
+                <i class="fa-solid fa-hotel fa-2xl"></i>
+                <h2>Hotel Reservas</h2>
+            </div>
+            <ul>
+                <li class="ativo"><i class="fa-solid fa-bed"></i> Quartos</li>
+                <li><a href="reserva.html" style="color: inherit;"><i class="fa-solid fa-calendar-days"></i> Reservas</a></li>
+                <li onclick="alert('Hotel Reservas v1.0 - SENAI 2026')"><i class="fa-solid fa-circle-info"></i> Sobre</li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="tela-quartos">
+                <div class="topo-tabela">
+                    <div>
+                        <h2>Quartos Cadastrados</h2>
+                        <p>Gerencie os quartos do hotel</p>
+                    </div>
+                    <button class="btn-principal" onclick="cadastro.classList.remove('oculto')">
+                        <i class="fa-solid fa-plus"></i> Novo Quarto
+                    </button>
+                </div>
+
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th>Nº Quarto</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaQuartosCorpo">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div id="cadastro" class="modal oculto">
+        <div class="janela">
+            <h2>Cadastro de Quarto</h2>
+            <p class="sub-modal">Informe os dados do novo quarto</p>
+            <form id="formCad">
+                <label>Número do Quarto</label>
+                <input type="text" id="numero" placeholder="Ex: 101" required>
+
+                <label>Tipo do Quarto</label>
+                <select id="tipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Luxo">Luxo</option>
+                    <option value="Suite">Suíte</option>
+                </select>
+
+                <br><br>
+                <button type="submit" class="btn-modal-salvar">Cadastrar</button>
+                <button type="button" class="btn-modal-cancelar" onclick="cadastro.classList.add('oculto')">Voltar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
